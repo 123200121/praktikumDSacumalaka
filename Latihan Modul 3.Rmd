@@ -1,0 +1,76 @@
+---
+title: "Latihan Modul 3"
+author: "Muhammad Fawwaz"
+date: "2022-09-14"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+import dataset "murders";
+``` {r}
+library(dslabs)
+data("murders")
+```
+
+
+1.Gunakan fungsi str untuk memeriksa struktur objek "murders". Manakah dari pertanyaaan berikut ini yang paling menggambarkan karakter dari tiap variabel pada data frame?
+
+```{r}
+str(murders)
+
+```
+2.Sebutkan apa saja nama kolom yang digunakan pada data frame!
+
+```{r}
+murders
+```
+3.Gunakan operator aksesor ($) untuk mengekstrak informasi singkatan negara dan menyimpannya pada objek “a”. Sebutkan jenis class dari objek tersebut.
+
+```{r}
+a <- murders$abb
+a
+class(a)
+```
+4.Gunakan tanda kurung siku untuk mengekstrak singkatan negara dan menyimpannya pada objek “b”. Tentukan apakah variabel “a” dan “b” bernilai sama?
+
+```{r}
+a <- murders$abb
+b <- murders$abb[a]
+class(b)
+```
+5.Variabel region memiliki tipe data: factor. Dengan satu baris kode, gunakan fungsi level dan length untuk menentukan jumlah region yang dimiliki dataset.
+
+```{r}
+length(murders$region)
+levels(murders$region)
+```
+6.Fungsi table dapat digunakan untuk ekstraksi data pada tipe vektor dan menampilkan frekuensi dari setiap elemen. Dengan menerapkan fungsi tersebut, dapat diketahui jumlah state pada tiap region. Gunakan fungsi table dalam satu baris kode untuk menampilkan tabel baru yang berisi jumlah state pada tiap region. 
+
+```{r}
+table(murders$state)
+```
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
