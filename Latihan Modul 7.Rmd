@@ -2,7 +2,9 @@
 title: "Latihan Modul 7"
 author: "Muhammad Fawwaz"
 date: "2022-11-01"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
